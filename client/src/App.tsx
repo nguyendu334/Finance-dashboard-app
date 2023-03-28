@@ -3,6 +3,7 @@ import { createTheme } from '@mui/material/styles';
 import { useMemo } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from '@/scenes/navbar';
+import Dashboard from '@/scenes/dashboard';
 import { themeSettings } from './theme';
 
 function App() {
@@ -13,10 +14,13 @@ function App() {
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
                     <Box width="100%" height="100%" padding="1rem 2rem 4rem 2rem">
-                      <Navbar />
+                        <Navbar />
                         <Routes>
-                            <Route path="/" element={<div>Hello</div>} />
-                            <Route path="/predictions" element={<div>Predictions page</div>}></Route>
+                            <Route path="/" element={<Dashboard />} />
+                            <Route
+                                path="/predictions"
+                                element={<div>Predictions page</div>}
+                            ></Route>
                         </Routes>
                     </Box>
                 </ThemeProvider>
