@@ -12,8 +12,8 @@ const Navbar = (props: Props) => {
     return (
         <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
             <FlexBetween gap="0.75rem">
-                <PixIcon sx={{ fontSize: '28px' }} />
-                <Typography variant="h4" fontSize="16px">
+                <PixIcon sx={{ fontSize: '35px' }} />
+                <Typography variant="h4" fontSize="24px">
                     Finanseer
                 </Typography>
             </FlexBetween>
@@ -26,6 +26,7 @@ const Navbar = (props: Props) => {
                         style={{
                             color: selected === 'dashboard' ? 'inherit' : palette.grey[700],
                             textDecoration: 'inherit',
+                            fontSize: '16px'
                         }}
                     >
                         Dashboard
@@ -37,6 +38,7 @@ const Navbar = (props: Props) => {
                         style={{
                             color: selected === 'predictions' ? 'inherit' : palette.grey[700],
                             textDecoration: 'inherit',
+                            fontSize: '16px'
                         }}
                     >
                         Predictions

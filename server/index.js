@@ -7,8 +7,10 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 
 import kpiRoutes from './routes/kpi.js';
+import productRoutes from './routes/product.js';
 import KPI from './models/KPI.js';
-import { kpis } from './data/data.js';
+import Product from './models/Product.js';
+import { kpis, products } from './data/data.js';
 
 dotenv.config();
 const app = express();
@@ -22,6 +24,7 @@ app.use(express.json());
 
 // routes
 app.use('/kpi', kpiRoutes);
+app.use('/product', productRoutes);
 
 // Connect to MongoDB
 const PORT = process.env.PORT || 5000;
@@ -36,5 +39,6 @@ mongoose
         // add data ontim only or as needed
         // await mongoose.connection.db.dropDatabase();
         // KPI.insertMany(kpis);
+        // Product.insertMany(products);
     })
     .catch((error) => console.log(error));
