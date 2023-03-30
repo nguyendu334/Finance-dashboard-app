@@ -10,12 +10,12 @@ const daySchema = new Schema(
         revenue: {
             type: mongoose.Types.Currency,
             currency: 'USD',
-            get: (v) => (v / 100).toFixed(2),
+            get: (v) => (v / 100),
         },
         expenses: {
             type: mongoose.Types.Currency,
             currency: 'USD',
-            get: (v) => (v / 100).toFixed(2),
+            get: (v) => (v / 100),
         },
     },
     {
@@ -29,22 +29,22 @@ const monthSchema = new Schema(
         revenue: {
             type: mongoose.Types.Currency,
             currency: 'USD',
-            get: (v) => (v / 100).toFixed(2),
+            get: (v) => (v / 100),
         },
         expenses: {
             type: mongoose.Types.Currency,
             currency: 'USD',
-            get: (v) => (v / 100).toFixed(2),
+            get: (v) => (v / 100),
         },
         operationalExpenses: {
             type: mongoose.Types.Currency,
             currency: 'USD',
-            get: (v) => (v / 100).toFixed(2),
+            get: (v) => (v / 100),
         },
         nonOperationalExpenses: {
             type: mongoose.Types.Currency,
             currency: 'USD',
-            get: (v) => (v / 100).toFixed(2),
+            get: (v) => (v / 100),
         },
     },
     {
@@ -57,24 +57,24 @@ const KPISchema = new Schema(
         totalProfit: {
             type: mongoose.Types.Currency,
             currency: 'USD',
-            get: (v) => (v / 100).toFixed(2),
+            get: (v) => (v / 100),
         },
         totalRevenue: {
             type: mongoose.Types.Currency,
             currency: 'USD',
-            get: (v) => (v / 100).toFixed(2),
+            get: (v) => (v / 100),
         },
         totalExpenses: {
             type: mongoose.Types.Currency,
             currency: 'USD',
-            get: (v) => (v / 100).toFixed(2),
+            get: (v) => (v / 100),
         },
         expensesByCategory: {
             type: Map,
             of: {
                 type: mongoose.Types.Currency,
                 currency: 'USD',
-                get: (v) => (v / 100).toFixed(2),
+                get: (v) => (v / 100),
             },
         },
         monthlyData: [monthSchema],

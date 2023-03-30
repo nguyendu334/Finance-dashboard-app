@@ -68,10 +68,10 @@ const Row2 = () => {
     return (
         <>
             <DashboardBox gridArea="d">
-                {/* <BoxHeader
+                <BoxHeader
                     title="Operational vs Non-Operational Expenses"
                     sideText="+4%"
-                /> */}
+                />
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart
                         data={operationalExpenses}
@@ -162,7 +162,7 @@ const Row2 = () => {
             </DashboardBox>
 
             <DashboardBox gridArea="f">
-                {/* <BoxHeader title="Product Prices vs Expenses" sideText="+4%" /> */}
+                <BoxHeader title="Product Prices vs Expenses" sideText="+4%" />
                 <ResponsiveContainer width="100%" height="100%">
                     <ScatterChart
                         margin={{

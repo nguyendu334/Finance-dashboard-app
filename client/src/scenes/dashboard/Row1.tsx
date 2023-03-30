@@ -1,22 +1,22 @@
-import { useMemo } from 'react';
+import BoxHeader from '@/components/BoxHeader';
 import DashboardBox from '@/components/DashboardBox';
-import BoxHeader from './../../components/BoxHeader';
 import { useGetKpisQuery } from '@/state/api';
+import { useTheme } from '@mui/material';
+import { useMemo } from 'react';
 import {
-    AreaChart,
     ResponsiveContainer,
+    CartesianGrid,
+    AreaChart,
+    BarChart,
+    Bar,
+    LineChart,
     XAxis,
     YAxis,
+    Legend,
+    Line,
     Tooltip,
     Area,
-    Line,
-    CartesianGrid,
-    Legend,
-    LineChart,
-    Bar,
-    BarChart,
 } from 'recharts';
-import { useTheme } from '@mui/material';
 
 const Row1 = () => {
     const { palette } = useTheme();
@@ -54,20 +54,20 @@ const Row1 = () => {
                 return {
                     name: month.substring(0, 3),
                     revenue: revenue,
-                    profit: (Number(revenue) - expenses).toFixed(2),
+                    profit: (revenue - expenses).toFixed(2),
                 };
             })
         );
     }, [data]);
+
     return (
         <>
             <DashboardBox gridArea="a">
-                {/* <BoxHeader
-                    title="Revenue & Expenses"
+                <BoxHeader
+                    title="Revenue and Expenses"
                     subTitle="top line represents revenue, bottom line represents expenses"
                     sideText="+4%"
-                /> */}
-
+                />
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart
                         width={500}
@@ -133,13 +133,12 @@ const Row1 = () => {
                     </AreaChart>
                 </ResponsiveContainer>
             </DashboardBox>
-
             <DashboardBox gridArea="b">
-                {/* <BoxHeader
-                    title="Profit & Revenue"
+                <BoxHeader
+                    title="Profit and Revenue"
                     subTitle="top line represents revenue, bottom line represents expenses"
                     sideText="+4%"
-                /> */}
+                />
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart
                         width={500}
@@ -168,7 +167,12 @@ const Row1 = () => {
                             style={{ fontSize: '10px' }}
                         />
                         <Tooltip />
-                        <Legend height={20} wrapperStyle={{ margin: '0 0 10px 0' }} />
+                        <Legend
+                            height={20}
+                            wrapperStyle={{
+                                margin: '0 0 10px 0',
+                            }}
+                        />
                         <Line
                             yAxisId="left"
                             type="monotone"
@@ -184,13 +188,12 @@ const Row1 = () => {
                     </LineChart>
                 </ResponsiveContainer>
             </DashboardBox>
-
             <DashboardBox gridArea="c">
-                {/* <BoxHeader
-                    title="Revenue Month by month"
-                    subTitle="graph represending the revenue month by month"
+                <BoxHeader
+                    title="Revenue Month by Month"
+                    subTitle="graph representing the revenue month by month"
                     sideText="+4%"
-                /> */}
+                />
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         width={500}

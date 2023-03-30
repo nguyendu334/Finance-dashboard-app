@@ -2,14 +2,15 @@ import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { useMemo } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { themeSettings } from './theme';
 import Navbar from '@/scenes/navbar';
 import Dashboard from '@/scenes/dashboard';
-import { themeSettings } from './theme';
+import Predictions from '@/scenes/predictions';
 
 function App() {
     const theme = useMemo(() => createTheme(themeSettings), []);
     return (
-        <div className="App">
+        <div className="app">
             <BrowserRouter>
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
@@ -17,10 +18,7 @@ function App() {
                         <Navbar />
                         <Routes>
                             <Route path="/" element={<Dashboard />} />
-                            <Route
-                                path="/predictions"
-                                element={<div>Predictions page</div>}
-                            ></Route>
+                            <Route path="/predictions" element={<Predictions />}></Route>
                         </Routes>
                     </Box>
                 </ThemeProvider>
